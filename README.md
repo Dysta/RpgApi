@@ -2,7 +2,7 @@
 API pour parser les données RPG-PARADIZE très simplement.
 
 ## Usage 
-https://rpgfucker.dysta.repl.co/?id=votre_id \
+http://dysta.alwaysdata.net/api/rpg_parser.php?id=<votre_id> \
 Votre ID RPG se trouve à la fin de votre url.
 
 L'API va vous renvoyer un fichier au format **JSON** que vous aurez plus qu'à décoder pour récupérer les valeurs.
