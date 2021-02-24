@@ -1,11 +1,12 @@
-# rpg_parser
-API pour parser les données RPG-PARADIZE très simplement.
+# RpgApi
+API pour parser les données d'une page RPG-PARADIZE très simplement.
 
 ## Usage 
-http://dysta.alwaysdata.net/api/rpg_parser.php?id=<votre_id> \
-Votre ID RPG se trouve à la fin de votre url.
-
-L'API va vous renvoyer un fichier au format **JSON** que vous aurez plus qu'à décoder pour récupérer les valeurs.
+Voir le dossier `example`.
 
 ## Données récupérés 
-Valeur out, position, nombre de vote, nom de votre page et les données du graphe (date et nombre de vote).
+- Nombre de out
+- Position
+- Nombre de vote
+- Donnée du graphe (date et nombre de vote pour la date)
+- Nom de la page
