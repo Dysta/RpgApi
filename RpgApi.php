@@ -45,6 +45,7 @@ class RpgApi {
 
     /**
      * RPG urls
+     * @var array
      */
     private $urls;
     
