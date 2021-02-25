@@ -209,7 +209,16 @@ class RpgApi {
      * @return string the JSON string
      */
     public function toJSON() {
-        $data = array(
+        $data = $this->toArray();
+        return json_encode($data);
+    }
+
+    /**
+     * Return data as a Array object
+     * @return array the array object
+     */
+    public function toArray() {
+        return array(
             'name'      => $this->getName(),
             'vote'      => $this->getVote(),
             'position'  => $this->getPosition(),
@@ -217,7 +226,6 @@ class RpgApi {
             'urls'      => $this->getUrls(),
             'graphe'    => $this->getGraph()
         );
-        return json_encode($data);
     }
 }
 ?>
