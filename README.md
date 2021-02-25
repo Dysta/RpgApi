@@ -10,3 +10,4 @@ Voir le dossier `example`.
 - Nombre de vote
 - Donnée du graphe (date et nombre de vote pour la date)
 - Nom de la page
+- Url (out et réel) du site
