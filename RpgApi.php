@@ -42,6 +42,11 @@ class RpgApi {
      * @var int
      */
     private $votes;
+
+    /**
+     * RPG urls
+     */
+    private $urls;
     
     /**
      * RPG graph data
@@ -83,6 +88,12 @@ class RpgApi {
         $this->outs = $out[1];
     }
 
+    private function parseUrls() {
+        $this->urls['out'] = "https://www.rpg-paradize.com/out.php?num=" . $this->id;
+        preg_match('/hidden;\">http(s)?:\/\/(.*?)<\/a>/', $this->webContent, $urls);
+        $this->urls['real'] = substr(explode(">", $urls[0])[1], 0, -3);
+    }
+
     private function parseGraph() {
         preg_match('/labels : \[(.*?)\]/',$this->webContent, $label);
         preg_match('/data : \[(.*?)\]/', $this->webContent, $data);
@@ -112,7 +123,7 @@ class RpgApi {
      * * Return RPG name
      * @return string name
      */
-    public function getName(){
+    public function getName() {
         if (empty($this->webContent))
             $this->getWebContent();
         
@@ -126,7 +137,7 @@ class RpgApi {
      * Return RPG vote
      * @return int vote number
      */
-    public function getVote(){
+    public function getVote() {
         if (empty($this->webContent))
             $this->getWebContent();
 
@@ -140,7 +151,7 @@ class RpgApi {
      * Return RPG position
      * @return int position number
      */
-    public function getPosition(){
+    public function getPosition() {
         if (empty($this->webContent))
             $this->getWebContent();
         
@@ -154,7 +165,7 @@ class RpgApi {
      * Return RPG out
      * @return int out number
      */
-    public function getOut(){
+    public function getOut() {
         if (empty($this->webContent))
             $this->getWebContent();
         
@@ -165,10 +176,24 @@ class RpgApi {
     }
 
     /**
+     * Return RPG url
+     * @return array out url
+     */
+    public function getUrls() {
+        if (empty($this->webContent))
+            $this->getWebContent();
+        
+        if (empty($this->urls))
+            $this->parseUrls();
+        
+        return $this->urls;
+    }
+
+    /**
      * Return RPG graph data
      * @return array RPG graph data as array('date', 'votes')
      */
-    public function getGraph(){
+    public function getGraph() {
         if (empty($this->webContent))
             $this->getWebContent();
         
@@ -188,6 +213,7 @@ class RpgApi {
             'vote'      => $this->getVote(),
             'position'  => $this->getPosition(),
             'out'       => $this->getOut(),
+            'urls'      => $this->getUrls(),
             'graphe'    => $this->getGraph()
         );
         return json_encode($data);
