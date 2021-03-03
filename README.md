@@ -4,6 +4,9 @@ API pour parser les données d'une page RPG-PARADIZE très simplement.
 ## Usage 
 Voir le dossier `examples`.
 
+## Installation 
+`composer require dysta/rpg_api`
+
 ## Données récupérés 
 - Nombre de out
 - Position

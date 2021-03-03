@@ -3,9 +3,6 @@
  * API pour RPG paradize
  * @author Dysta
  */
-
-namespace Dysta;
-
 class RpgApi {
     /**
      * HTML code

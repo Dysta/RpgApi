@@ -2,7 +2,6 @@
 // example usage of RPGParser.php
 // passing RPG's ID by url and returning a json stream
 require "../RpgApi.php";
-use Dysta\RpgApi;
 
 if (!isset($_GET['id'])):
     echo "Usage : url.co?id={id_rpg}";
