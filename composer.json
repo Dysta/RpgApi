@@ -1,0 +1,12 @@
+{
+    "name": "dysta/rpg_api",
+    "description": "A simple API to parse a RPG page",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dysta",
+            "email": "xav4098@gmail.com"
+        }
+    ],
+    "require": {}
+}
