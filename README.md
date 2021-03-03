@@ -2,7 +2,7 @@
 API pour parser les données d'une page RPG-PARADIZE très simplement.
 
 ## Usage 
-Voir le dossier `example`.
+Voir le dossier `examples`.
 
 ## Données récupérés 
 - Nombre de out
